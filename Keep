@@ -1,0 +1,8 @@
+-- keepFindingImage(imagePath, count, fuzzy, ignoreColors, region, func, interval, exit)
+
+local f = function()
+ keepFindingImage("start.png", 1, 1, nil, nil, f, 1000, exit);
+end
+
+    keep(f, 1000, exit);
+end
