@@ -1,18 +1,15 @@
-local j, start = 0, findImage ("start.png", 1, 1, nil, nil);
-local k, playagain = 5, findImage ("playagain.png", 1, 1, nil, nil);
-
-for i, v in pairs (start) do
-touchDown (0, 45, 450;
-usleep (20000);
-touchUp (0, 45, 450);
-j = j + 1;
-usleep (100000)
-end
-if j < 3 then
-usleep (50000);
-elseif j = 5 then
-
+local result = findImage("start.png", 1, 1, nil, nil};
+for i, v in pairs(result) do
+    tap(45, 450);
 end
 
+local f1 = function(locations)
+    for i, v in pairs(locations) do
+        tap (138, 555);
+    end
+end
 
-if 0 <j then break end
+local exit = false;
+keepFindingImage("start.png", 1, 1, nil, nil, f1, 1000, exit);
+
+break end
