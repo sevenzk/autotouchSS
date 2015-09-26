@@ -1,27 +1,21 @@
 -- the function required by keepFindingImage must be like "function(locations)", 
 -- then you can use the locations inside that function.
 
-local start = tap (45, 450);
-local playagain = tap (138, 555);
-
 local f1 = function(locations)
     for i, v in pairs(locations) do
-        start;
+        tap (45, 450);
     end
 end
 
 local exit = false;
 keepFindingImage("start.png", 1, 1, nil, nil, f1, 1000, exit);
 
-if start == true then
-exit = true;
-end
 
 -- ATTENTION: execute f2 will return a new function accepts the locations table which is the function will be execute in keepFindingImage
 -- That's different with f1, the merit of f2 is that you can pass some extra parameters to the function(locations). 
 local f2 = function(extraDescription)
     for i, v in pairs(extraDescription) do
-        playagain;
+        tap (138, 555);
     end
 end
 
