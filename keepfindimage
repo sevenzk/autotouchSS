@@ -2,8 +2,9 @@
 -- then you can use the locations inside that function.
 
 local f1 = function(locations)
+    local start = tap(45,450)
     for i, v in pairs(locations) do
-        tap (45, 450);
+        start;
     end
 end
 
