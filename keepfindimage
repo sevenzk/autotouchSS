@@ -3,7 +3,7 @@
 -- then you can use the locations inside that function.
 local f1 = function(locations)
     for i, v in pairs(locations) do
-        log("x:" .. v[1] .. ", y:" .. v[2]);
+        tap (45, 450);
     end
 end
 
@@ -18,7 +18,7 @@ exit = true;
 local f2 = function(extraDescription)
     return function(locations)
         for i, v in pairs(locations) do
-            log(extraDescription .. " x:" .. v[1] .. ", y:" .. v[2]);
+            tap (138, 555);
         end
     end
 end
