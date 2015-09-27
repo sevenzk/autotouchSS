@@ -1,13 +1,15 @@
-function keepFindingImage("start.png", 1, 1, nil, 1000, exit)
-    local f = function()
-        findImage("start.png", 1, 1, nil, nil);
-        for a, b in pairs(f) do
-        if a = true then
-        tap (45, 450)
-        else keep(f, 1000, exit);
-        end
-    end
+local j,result = 0,findImage ("start.png", 1, 1, nil, nil);
+  for i,v in pairs(result) do
+    touchDown(0, v[1], v[2]);
+    usleep(20000.00);
+    touchUp(0, v[1], v[2]);
+    j = j + 1;
+  end
+  if j < 3 then
+    alert("LOL");
+  end
+end
 
-
-    
+if 0 < j then
+break
 end
