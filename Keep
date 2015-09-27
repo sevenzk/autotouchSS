@@ -1,15 +1,13 @@
-local result = findImage("start.png", 1, 1, nil, nil};
-for i, v in pairs(result) do
-    tap(45, 450);
-end
-
-local f1 = function(locations)
-    for i, v in pairs(locations) do
-        tap (138, 555);
+function keepFindingImage("start.png", 1, 1, nil, 1000, exit)
+    local f = function()
+        findImage("start.png", 1, 1, nil, nil);
+        for a, b in pairs(f) do
+        if a = true then
+        exit = true;
+        else keep;
+        end
     end
+
+    keep(f, 1000, exit);
+    
 end
-
-local exit = false;
-keepFindingImage("start.png", 1, 1, nil, nil, f1, 1000, exit);
-
-break end
