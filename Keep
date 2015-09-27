@@ -7,6 +7,7 @@ local j,result = 0,findImage ("start.png", 1, 1, nil, nil);
   end
   if j < 3 then
     alert("LOL");
+    --usleep(50000 - j*20000);
   end
 end
 
