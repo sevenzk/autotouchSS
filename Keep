@@ -3,11 +3,11 @@ function keepFindingImage("start.png", 1, 1, nil, 1000, exit)
         findImage("start.png", 1, 1, nil, nil);
         for a, b in pairs(f) do
         if a = true then
-        exit = true;
-        else keep;
+        tap (45, 450)
+        else keep(f, 1000, exit);
         end
     end
 
-    keep(f, 1000, exit);
+
     
 end
