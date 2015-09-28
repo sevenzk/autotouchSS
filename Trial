@@ -1,0 +1,8 @@
+search = true
+while search do
+    findImage("start.png", 1 ,1 , nil, nil)
+end
+
+if search == 0 then
+tap (45,450);
+end
