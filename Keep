@@ -1,16 +1,12 @@
-local j,result = 0,findImage ("start.png", 1, 1, nil, nil);
-  for i,v in pairs(result) do
-    touchDown(0, v[1], v[2]);
-    usleep(20000.00);
-    touchUp(0, v[1], v[2]);
-    j = j + 1;
-  end
-  if j < 3 then
-    alert("LOL");
-    --usleep(50000 - j*20000);
-  end
+function imagecheck(s)
+    local r = findImage ("start.png", 1, 0.9, nil, nil);
+    n = 0;
+    for i, v in pairs(r) do
+        n = n + 1;
+    end
+    return n;
 end
 
-if 0 < j then
-break
+if imagecheck(start.png) == 0 then
+  tap(45,450)
 end
