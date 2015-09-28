@@ -1,8 +1,15 @@
-search = true
-while search do
-    findImage("start.png", 1 ,1 , nil, nil)
+function qgpage_yes()
+  local region = {5, 126, 98, 100};
+  local result_qgpage = findImage("images/qg_rang.png", 1, 0.7, nil, region);
+  local found = false
+  for i,v in pairs(result_qgpage) do
+    if v[1] ~= nil and v[2] ~= nil then
+      found = true
+    end
+  end
+  return found
 end
 
-if search == 0 then
-tap (45,450);
-end
+rangFound = qgpage_yes()
+log(rangFound)
+
