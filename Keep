@@ -1,12 +1,27 @@
-function imagecheck(s)
-    local r = findImage ("start.png", 1, 0.9, nil, nil);
-    n = 0;
-    for i, v in pairs(r) do
-        n = n + 1;
+local f1 = function(start)
+    for i, v in pairs(start) do
+--      tap(v[1], v[2]); -- I tried this but it doesn't tap the start.png
+        tap(145, 450); -- this is the coord of the start.png
     end
-    return n;
 end
 
-if imagecheck(start.png) == 0 then
-  tap(45,450)
+local exit = false;
+keepFindingImage("images/start.png", 1, 0.9, nil, nil, f1, 1000, exit);
+
+-- not sure what to do with this, so I kept it.
+exit = true;
+
+-- What I`m trying to do here is to break the loop when it has already tap the location
+-- so it can move to the next code
+
+local f2 = function(again)
+    for i, v in pairs(again) do
+--      tap (v[1], v[2]); -- again, nothing is pressed here.
+        tap (155, 555);
+    end
 end
+
+local exit = false;
+keepFindingImage("images/playagain.png", 1, 0.7, nil, nil, f2, 1000, exit);
+
+exit = true;
