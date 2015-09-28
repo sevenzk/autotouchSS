@@ -1,8 +1,7 @@
-function qgpage_yes()
-  local region = {5, 126, 98, 100};
-  local result_qgpage = findImage("images/qg_rang.png", 1, 0.7, nil, region);
+function start()
+  local result = findImage("ss_start.png", 1, 0.7, nil, nil);
   local found = false
-  for i,v in pairs(result_qgpage) do
+  for i,v in pairs(result) do
     if v[1] ~= nil and v[2] ~= nil then
       found = true
     end
@@ -10,6 +9,5 @@ function qgpage_yes()
   return found
 end
 
-rangFound = qgpage_yes()
+rangFound = start()
 log(rangFound)
-
