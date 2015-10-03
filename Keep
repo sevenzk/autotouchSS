@@ -1,13 +1,13 @@
-for c = 1, 20*60 do
-local j, start = 0, findImage("/images/start.png", 1, 1, nil, nil);
-    for i, v in pairs(start) do
-        tap (45,450)
-        j= j + 1;
-    end
-
-if j < 3 then
-    usleep(50000.00 - j*20000.00);
-  end
+function image_exists()
+local region = {45, 366, 100, 100};
+local image = findImage("images/image.png", 1, 1, nil, region);
+for i, v in pairs(image) do
+log("x:" .. v[1] .. ", y:" .. v[2]);
 end
 
-if 0 < j then break end
+if next (image) == nil then 
+--Execute a
+else 
+--Execute b
+end
+end
