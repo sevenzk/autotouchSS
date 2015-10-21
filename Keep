@@ -1,13 +1,32 @@
-function image_exists()
-local region = {45, 366, 100, 100};
-local image = findImage("images/image.png", 1, 1, nil, region);
-for i, v in pairs(image) do
-log("x:" .. v[1] .. ", y:" .. v[2]);
+foundStart = false;
+foundAgain = false;
+
+while foundStart == false do
+startBtnLocs = 1,findImage("start.bmp", 1, 1, nil, nil);
+
+   if startBtnLocs > 0 then
+      foundStart = true;
+      for i,v in pairs(startBtnLocs) do
+      touchDown (0, 45, 450);
+      usleep (199999);
+      touchUp (0, 50, 455);
+      usleep(199999);
+      tap (47, 455);
+   end
+end
 end
 
-if next (image) == nil then 
---Execute a
-else 
---Execute b
-end
+while foundAgain == false do
+replay = findImage("ss3.bmp", 1, 0.7, nil, nil);
+
+   if #replay > 0 then
+   foundAgain = true;
+      for i,v in ipairs(replay) do
+      touchDown (0, 140, 555);
+      usleep (199999);
+      touchUp (0, 145, 550);
+      usleep (199999);
+      tap (140, 555);
+      end   
+   end
 end
